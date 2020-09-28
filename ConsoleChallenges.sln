@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KomodoCafe_Console", "KomodoCafeConsole\KomodoCafe_Console.csproj", "{FB683E75-9438-478C-ABF8-12F86454E75D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KomodoCafe_MenuRepository", "KomodoCafe_MenuRepository\KomodoCafe_MenuRepository.csproj", "{9817C3C5-CD62-4331-ACA5-252AB23F50DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KomodoCafe_Tests", "KomodoCafe_Tests\KomodoCafe_Tests.csproj", "{0B17F391-1241-41EA-B572-6999AE5F5839}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KomodoClaimsDept_Console", "KomodoClaimsDept_Console\KomodoClaimsDept_Console.csproj", "{A7690C5A-5D94-4657-B06F-3B0952DFE7B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KomodoClaimsDept_ClaimsRepository", "KomodoClaimsDept_ClaimsRepository\KomodoClaimsDept_ClaimsRepository.csproj", "{B4780FBF-6D5B-4BF0-888B-85DA4291F941}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB683E75-9438-478C-ABF8-12F86454E75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB683E75-9438-478C-ABF8-12F86454E75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB683E75-9438-478C-ABF8-12F86454E75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB683E75-9438-478C-ABF8-12F86454E75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9817C3C5-CD62-4331-ACA5-252AB23F50DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9817C3C5-CD62-4331-ACA5-252AB23F50DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9817C3C5-CD62-4331-ACA5-252AB23F50DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9817C3C5-CD62-4331-ACA5-252AB23F50DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B17F391-1241-41EA-B572-6999AE5F5839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B17F391-1241-41EA-B572-6999AE5F5839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B17F391-1241-41EA-B572-6999AE5F5839}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B17F391-1241-41EA-B572-6999AE5F5839}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7690C5A-5D94-4657-B06F-3B0952DFE7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7690C5A-5D94-4657-B06F-3B0952DFE7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7690C5A-5D94-4657-B06F-3B0952DFE7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7690C5A-5D94-4657-B06F-3B0952DFE7B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4780FBF-6D5B-4BF0-888B-85DA4291F941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4780FBF-6D5B-4BF0-888B-85DA4291F941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4780FBF-6D5B-4BF0-888B-85DA4291F941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4780FBF-6D5B-4BF0-888B-85DA4291F941}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0219BF8A-44A8-4E4A-B6C0-C21E1C6E7092}
+	EndGlobalSection
+EndGlobal
