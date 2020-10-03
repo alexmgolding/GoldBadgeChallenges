@@ -14,7 +14,7 @@ namespace KomodoClaimsDept_ClaimsRepository
         Theft
     }
 
-    public class ClaimConent
+    public class ClaimContent
     {
         public int ClaimID { get; set; }
         public ClaimType TypeOfClaim { get; set; }
@@ -24,9 +24,9 @@ namespace KomodoClaimsDept_ClaimsRepository
         public string DateOfClaim { get; set; }
         public bool IsValid { get; set; }
        
-        public ClaimConent() { }
+        public ClaimContent() { }
 
-        public ClaimConent(int claimID, ClaimType claim, string description, decimal claimAmount, string dateOfIncident, string dateOfClaim, bool isValid)
+        public ClaimContent(int claimID, ClaimType claim, string description, decimal claimAmount, string dateOfIncident, string dateOfClaim, bool isValid)
         {
             ClaimID = claimID;
             TypeOfClaim = claim;

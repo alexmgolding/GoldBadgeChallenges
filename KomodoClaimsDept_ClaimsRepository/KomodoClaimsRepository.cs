@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,22 +9,34 @@ namespace KomodoClaimsDept_ClaimsRepository
 {
     public class KomodoClaimsRepository
     {
-        private List<ClaimConent> _listOfClaims = new List<ClaimConent>() { };
+       private Queue<ClaimContent> _listOfClaims = new Queue<ClaimContent>() { };
 
         // See All Claims (Read)
-        public List<ClaimConent> GetClaimConentList()
+        public Queue<ClaimContent> GetClaimConentList()
         {
             return _listOfClaims;
         }
 
         // Take Care of Next Claim
-
-
-        // Enter a New Claim (Create)
-        public void AddClaimToList(ClaimConent claim)
+        public ClaimContent HandleNextClaim()
         {
-            _listOfClaims.Add(claim);
+            Console.Clear();
+
+            return _listOfClaims.Peek();
         }
 
+        // Dequeue
+        public void DequeueClaim()
+        {
+            _listOfClaims.Dequeue();
+        }
+
+        // Enter a New Claim (Create)
+        public void AddClaimToList(ClaimContent claim)
+        {
+            _listOfClaims.Enqueue(claim);
+        }
+
+        
     }
 }

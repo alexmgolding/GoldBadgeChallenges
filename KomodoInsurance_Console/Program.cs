@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KomodoClaimsDept_Console
+namespace KomodoInsurance_Console
 {
     class Program
     {

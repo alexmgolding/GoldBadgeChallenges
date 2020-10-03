@@ -13,6 +13,7 @@ namespace KomodoClaimsDept_Console
         private KomodoClaimsRepository _claimsRepo = new KomodoClaimsRepository();
         public void Run()
         {
+            SeedClaim();
             Menu();
         }
 
@@ -40,7 +41,7 @@ namespace KomodoClaimsDept_Console
                         break;
                     case "2":
                         // Review Claim
-
+                        ReviewClaim();
                         break;
                     case "3":
                         // Create New Claim
@@ -68,9 +69,9 @@ namespace KomodoClaimsDept_Console
         {
             Console.Clear();
 
-            List<ClaimConent> listOfClaims = _claimsRepo.GetClaimConentList();
+            Queue<ClaimContent> listOfClaims = _claimsRepo.GetClaimConentList();
 
-            foreach(ClaimConent claim in listOfClaims)
+            foreach(ClaimContent claim in listOfClaims)
             {
                 Console.WriteLine($"ClaimID: {claim.ClaimID}\n" +
                     $"Claim Type: {claim.TypeOfClaim}\n" +
@@ -83,13 +84,44 @@ namespace KomodoClaimsDept_Console
         }
         
         // Review Claim
+        private void ReviewClaim()
+        {
+            Console.Clear();
 
+            ClaimContent nextClaim = _claimsRepo.HandleNextClaim();
+            Console.WriteLine($"ClaimID: {nextClaim.ClaimID}\n" +
+                $"Type: {nextClaim.TypeOfClaim}\n" +
+                $"Description: {nextClaim.Description}\n" +
+                $"Amount: {nextClaim.ClaimAmount}\n" +
+                $"DateOfAccedent: {nextClaim.DateOfIncident}\n" +
+                $"DateOfClaim: {nextClaim.DateOfClaim}\n" +
+                $"IsValid: {nextClaim.IsValid}");
+
+            Console.WriteLine("Would you like to handle this claim? (Y/N)");
+            string handleClaim = Console.ReadLine().ToLower();
+
+            if (handleClaim == "y")
+            {
+                _claimsRepo.DequeueClaim();
+                Console.WriteLine("The claim was successfully proccesed. Press any key to go back to the menu.");
+                Console.ReadKey();
+                Console.Clear();
+                Menu();
+            }
+            else
+            {
+                Console.WriteLine("Press any key to go back to the main menu.");
+                Console.ReadKey();
+                Console.Clear();
+                Menu();
+            }
+        }
 
         // Create New Claim
         private void CreateNewClaim()
         {
             Console.Clear();
-            ClaimConent newClaim = new ClaimConent();
+            ClaimContent newClaim = new ClaimContent();
 
             // ClaimID
             Console.WriteLine("Enter the new ClaimID:");
@@ -136,6 +168,18 @@ namespace KomodoClaimsDept_Console
             }
 
             _claimsRepo.AddClaimToList(newClaim);
+        }
+
+        // Seed Method
+        private void SeedClaim()
+        {
+            ClaimContent carAccident = new ClaimContent(1, ClaimType.Car, "Wreck on I-69", 1500m, "08/20/2020", "09/14/2020", true);
+            ClaimContent homeClaim = new ClaimContent(2, ClaimType.Home, "Kitchen fire", 5500m, "08/10/2020", "09/09/2020", true);
+            ClaimContent theftClaim = new ClaimContent(3, ClaimType.Theft, "Stolen phone", 1000m, "07/30/2020", "09/14/2020", false);
+
+            _claimsRepo.AddClaimToList(carAccident);
+            _claimsRepo.AddClaimToList(homeClaim);
+            _claimsRepo.AddClaimToList(theftClaim);
         }
 
     }
